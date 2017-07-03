@@ -11,8 +11,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: npm run test
-  deployment:
-    staging:
-      branch: master
-      heroku:
-        appname: devops-tp1
+    deployment:
+      staging:
+        branch: master
+        heroku:
+          appname: devops-tp1
