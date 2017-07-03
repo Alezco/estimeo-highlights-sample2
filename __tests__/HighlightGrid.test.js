@@ -77,10 +77,18 @@ describe('<HighlightGrid />', () => {
         }].reverse();
     });
 
-    /**
-     * TODO
-     */
-    it('will success', () => {
-        expect(false).toBe(false)
+    it('has 3 "<GridList>" tag', () => {
+      const wrapper = shallow(<HighlightGrid highlights={highlights}/>);
+      expect(wrapper.find('GridList').length).toBe(3)
+    })
+
+    it('first "<GridList>" col = 2', () => {
+      const wrapper = shallow(<HighlightGrid highlights={highlights}/>);
+      expect(wrapper.find('GridList').first().contains('cols=2'))
+    })
+
+    it('first "<GridList>" col = 2', () => {
+      const wrapper = shallow(<HighlightGrid highlights={highlights}/>);
+      expect(wrapper.find('GridList').first().contains("keys" + highlights[0].periode))
     })
 })
